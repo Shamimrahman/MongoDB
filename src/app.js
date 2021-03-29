@@ -227,6 +227,24 @@ const Updatedocument= async (_id)=>{
 
 }
 
-Updatedocument("6060f5957499cc1d68f0fc54")
+//Updatedocument("6060f5957499cc1d68f0fc54")
 
 //******** Data Update End***********
+
+//********Document Deleted Start********
+
+const Deletedoc= async (_id)=>{
+ //same functionality as update
+ try{
+    const del=await Playlist. findByIdAndDelete({_id})
+    console.log(del)
+ }
+ catch(err){
+  console.log(err)
+
+ }
+
+  //async function use korar jonno try catch use kora valo
+}
+
+Deletedoc("6060f5957499cc1d68f0fc56")
