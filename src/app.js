@@ -170,10 +170,35 @@ const getDocument=async ()=>{
     //********Logical operator  End ************
 
 
+    //******** Sorting and Counting Query Start ************
+
+    // const sortcountres=await Playlist
+
+    //koto gula backend course currenty active na tar number bolo
+    //.find({$and:[{type:"Backend"},{active:false}]})
+    //.select({name:1})
+    //.countDocuments()
+
+    //Sorting koro ekhn 
+    // backend er video gula ascending order a sajao
+
+   // .find({type:"Backend"})
+    //.select({name:1})
+   // .sort({video:-1})
+
+    //sort a 1 disi jate choto theke boro dekhay 
+    //-1 dile boro theke choto te jabe
+
+
       
     //console.log(result)
     //console.log(comres)
-    console.log(logres)
+    //console.log(logres)
+    //console.log(sortcountres)
+
+     //******** Sorting and Counting Query End***********
+
+    //******** Data Update Start***********
 
 
 }
