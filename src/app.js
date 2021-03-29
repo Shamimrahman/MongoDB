@@ -109,7 +109,7 @@ const createdoc= async ()=>{
 
 //insert end
 
-//CRUD OPERATION
+// Query OPERATION
 
 const getDocument=async ()=>{
 
@@ -127,8 +127,7 @@ const getDocument=async ()=>{
       
     //********comarison operator Start **********
   
-    const comres= await Playlist
-    
+    //const comres= await Playlist
     // jeisob video 50+ or 50 tader nam show koro
 
     //.find({video: {$gte:50}})
@@ -148,11 +147,33 @@ const getDocument=async ()=>{
  //********comarison operator end ************
 
 
+  //********Logical operator  Start ************
+
+ // const logres=await Playlist
+
+  // amake emn course dekhao jar type hoilo backend
+  //or backend na hoileo course gula active
+  
+  //so amra $or use korbo
+  // .find({$or:[{type:"Backend"},{active:true}]})
+  // .select({name:1})
+  
+ 
+  // amake emn course dekhao jar type hoilo backend
+  // and active status ofcourse true hoite hobe
+  
+  //so amra $and use korbo
+
+  //.find({$and:[{type:"Backend"},{active:true}]})
+  //.select({name:1})
+
+    //********Logical operator  End ************
 
 
-
+      
     //console.log(result)
     //console.log(comres)
+    console.log(logres)
 
 
 }
