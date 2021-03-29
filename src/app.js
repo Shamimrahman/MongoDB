@@ -87,9 +87,17 @@ const createdoc= async ()=>{
         
         })
 
-        const result=await Playlist.insertMany([react,express,mongo,node])
+        const php=new Playlist({
+            name:"PHP",
+            type:"Backend",
+            video:76,
+            active:true,
+        
+        })
 
-        console.log(result)
+    const result=await Playlist.insertMany([react,express,mongo,node,php])
+
+     console.log(result)
         
     } catch(err){
         console.log(err)
@@ -98,6 +106,8 @@ const createdoc= async ()=>{
 }
 
 //createdoc()
+
+//insert end
 
 //CRUD OPERATION
 
@@ -109,12 +119,41 @@ const getDocument=async ()=>{
     //const result=await Playlist.find({type:"Fronted"})
 
     //amar just frontend course er nam lagbe and first fronted er nam
-    const result=await Playlist.find({type:"Fronted"}).select({name:1}).limit(1)
+     /*const result=await Playlist
+    .find({type:"Fronted"})
+    .select({name:1})
+    .limit(1)
+     */
+      
+    //********comarison operator Start **********
+  
+    const comres= await Playlist
+    
+    // jeisob video 50+ or 50 tader nam show koro
+
+    //.find({video: {$gte:50}})
+   // .select({name:1})
+ 
+   // jeisob video 50 er niche or 50 tader nam show koro
+
+   //.find({video:{$lte:50}})
+   //.select({name:1})
+
+    //jei sob course database er under a backeend tader pawar jonno
+
+   //.find({type:{$in:["Backend","Database"]}})
+   //na thakle $nin use hobe
+   //.select({name:1})
+
+ //********comarison operator end ************
 
 
 
 
-    console.log(result)
+
+    //console.log(result)
+    //console.log(comres)
+
 
 }
 
