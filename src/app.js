@@ -198,11 +198,35 @@ const getDocument=async ()=>{
 
      //******** Sorting and Counting Query End***********
 
-    //******** Data Update Start***********
+    
 
 
 }
 
 getDocument()
 
+//******** Data Update Start***********
+const Updatedocument= async (_id)=>{
+    const update=await Playlist.findByIdAndUpdate({_id},
+        {$set:{
+            name:"React Js"
+        }},{
+            new:true,
 
+            //new true disi karon current updated data console a show kore 
+            useFindAndModify:false
+        }
+        
+        
+        )
+
+    console.log(update)
+
+
+    //kono data update korte hoile amr _id dhore dhore korte hobe
+
+}
+
+Updatedocument("6060f5957499cc1d68f0fc54")
+
+//******** Data Update End***********
