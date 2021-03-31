@@ -34,7 +34,16 @@ const playListSchema= new mongoose.Schema({
         enum:["Frontend" ,"Backend", "Database"]
     },
     video:{
-        type:Number
+        //custom validation
+        type:Number,
+
+         validate(value){
+             if(value<0){
+                 throw new Error("Can't be negative")
+             }
+
+         }
+
     },
     author:{
         type:String,
@@ -74,9 +83,9 @@ const adddoc=async ()=>{
     try{
 
         const react=new Playlist({
-            name:"Nodejs   ",
+            name:"Angular js  ",
             ctype:"Backend",
-            video:122,
+            video:12,
             author:"Shamim",
             active:true
 
