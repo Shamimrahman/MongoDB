@@ -1,7 +1,9 @@
 const mongoose=require("mongoose")
+const validator = require('validator');
+
 
 //mongodb connction and db create nodedata
-mongoose.connect("mongodb://localhost:27017/validationdata",{useNewUrlParser:true,useUnifiedTopology:true})
+mongoose.connect("mongodb://localhost:27017/validationdata",{useNewUrlParser:true,useUnifiedTopology:true,createIndexes:true})
 .then(()=>
 
     console.log("Connection Successful")
@@ -51,6 +53,18 @@ const playListSchema= new mongoose.Schema({
         uppercase:true
 
     },
+    email:{
+        type:String,
+        required:true,
+        unique:true,
+
+        validate(value){
+            if(!validator.isEmail(value)){
+                throw new Error ("Invalid Mail")
+            }
+        }
+
+    },
     active:Boolean,
     date:{
         type:Date,
@@ -83,10 +97,11 @@ const adddoc=async ()=>{
     try{
 
         const react=new Playlist({
-            name:"Angular js  ",
+            name:"Php Cake ",
             ctype:"Backend",
             video:12,
             author:"Shamim",
+            email:"Shamim.rahman@gmail.com",
             active:true
 
         })
@@ -107,3 +122,7 @@ const adddoc=async ()=>{
 
 adddoc()
 
+// npm validator
+//npm i validator
+ //for email 
+ //isEmail()
